@@ -1,0 +1,38 @@
+{
+  "name": "redux-create-act",
+  "version": "1.0.0",
+  "description": "Super small util to avoid string constants for actions in redux",
+  "main": "lib/redux-create-act.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladislavMurashchenko/redux-create-act.git"
+  },
+  "keywords": [
+    "redux",
+    "action",
+    "act"
+  ],
+  "author": "Vladislav Murashchenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VladislavMurashchenko/redux-create-act/issues"
+  },
+  "homepage": "https://github.com/VladislavMurashchenko/redux-create-act#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.16.0",
+    "jest": "^24.9.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  }
+}
