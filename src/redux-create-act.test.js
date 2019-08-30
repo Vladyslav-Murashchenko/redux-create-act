@@ -1,10 +1,20 @@
 import createAct from '.';
 
-test('simple usage works', () => {
-  const TYPE = 'increment';
-  const PAYLOAD = 2;
+const TYPE = 'increment';
+const PAYLOAD = 2;
 
-  const increment = createAct(TYPE, (payload) => ({
+test('works with single argument', () => {
+  const actionCreator = createAct(TYPE);
+
+  const result = {
+    type: TYPE,
+  };
+
+  expect(actionCreator()).toStrictEqual(result);
+});
+
+test('works with two arguments', () => {
+  const actionCreator = createAct(TYPE, (payload) => ({
     payload,
   }));
 
@@ -13,6 +23,6 @@ test('simple usage works', () => {
     payload: PAYLOAD,
   };
 
-  expect(increment(PAYLOAD)).toStrictEqual(result);
-  expect(increment.type).toBe(TYPE);
+  expect(actionCreator(PAYLOAD)).toStrictEqual(result);
+  expect(actionCreator.type).toBe(TYPE);
 });
