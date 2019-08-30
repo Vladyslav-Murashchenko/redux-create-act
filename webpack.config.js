@@ -8,6 +8,8 @@ module.exports = {
   output: {
     filename: 'redux-create-act.js',
     path: path.resolve(__dirname, 'lib'),
+    library: 'createAct',
+    libraryTarget: 'umd',
   },
 
   plugins: [new webpack.ProgressPlugin()],

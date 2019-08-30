@@ -1,8 +1,9 @@
 {
   "name": "redux-create-act",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Super small util to avoid string constants for actions in redux",
   "main": "lib/redux-create-act.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "jest",
     "build": "webpack"
