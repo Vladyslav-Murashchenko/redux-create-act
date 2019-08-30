@@ -40,7 +40,7 @@ const reducer = (state = 0, action = {}) => {
 You can use it with redux-thunk as usual.
 Here is rewiten example from redux-thunk doc.
 
-```
+```js
 ...
 function fetchSecretSauce() {
   return fetch('https://www.google.com/search?q=secret+sauce');
