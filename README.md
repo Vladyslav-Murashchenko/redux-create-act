@@ -9,7 +9,7 @@ npm i redux-create-act
 ## Usage
 Just create your action creator as usual, 
 but wrap it to `createAct` like here: 
-```
+```js
 createAct('YOUR_TYPE', yourActionCreator)
 ```
 Notice that you don't need `type` field in your action.
