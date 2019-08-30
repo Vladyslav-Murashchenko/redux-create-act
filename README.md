@@ -1,5 +1,5 @@
 # redux-create-act
-Small and simple util to avoid string constants for actions in redux, which doesn't forse you to use FSA or custom createReducer.
+Small and simple util to avoid string constants for actions in redux, which doesn't force you to use FSA or custom createReducer.
 
 ## Installation
 ```
@@ -37,11 +37,11 @@ const reducer = (state = 0, action = {}) => {
 };
 ```
 
-You can use it with redux-thunk as usual.
-Here is rewiten example from redux-thunk doc.
+### Example with redux-thunk
 
 ```js
-...
+import createAct from 'redux-create-act';
+
 function fetchSecretSauce() {
   return fetch('https://www.google.com/search?q=secret+sauce');
 }
@@ -68,5 +68,37 @@ function makeASandwichWithSecretSauce(forPerson) {
     );
   };
 }
+```
+### Example with redux-saga
+```js
+import createAct from 'redux-create-act';
+import { call, put, takeEvery } from 'redux-saga/effects';
+import Api from '...';
 
+const userFetchRequest = createAct('USER_FETCH_REQUEST', (userId) => ({
+  payload: {
+    userId,
+  },
+}));
+
+const userFetchSuccess = createAct('USER_FETCH_SUCCESS', (user) => ({
+  user,
+}));
+
+const userFetchFailed = createAct('USER_FETCH_FAILED', (message) => ({
+  message,
+}));
+
+function* onFetchUser(action) {
+   try {
+      const user = yield call(Api.fetchUser, action.payload.userId);
+      yield put(userFetchSuccess(user));
+   } catch (e) {
+      yield put(userFetchFailed(e.message));
+   }
+}
+
+function* watchFetchUser() {
+  yield takeEvery(userFetchRequest.type, onFetchUser);
+}
 ```
