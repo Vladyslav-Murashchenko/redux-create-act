@@ -15,7 +15,9 @@
   "keywords": [
     "redux",
     "action",
-    "act"
+    "act",
+    "create",
+    "reduce boilerplate"
   ],
   "author": "Vladislav Murashchenko",
   "license": "MIT",
