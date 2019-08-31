@@ -1,4 +1,5 @@
 # redux-create-act
+[![Build Status](https://travis-ci.org/wwayne/react-tooltip.svg?branch=master)](https://www.npmjs.com/package/redux-create-act)
 Small and simple util to avoid string constants for actions in redux, which doesn't force you to use FSA or custom createReducer.
 
 ## Installation
